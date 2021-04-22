@@ -1,6 +1,6 @@
 #!/bin/bash
 
-python setup.py build develop
+python3 setup.py build develop
 
 gdown --id 0B7fNdx_jAqhtSmdCNDVOVVdINWs -O resnet101.pth
 mkdir data/imagenet_weights/

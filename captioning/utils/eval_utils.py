@@ -27,26 +27,36 @@ def eval_split(model, loader, eval_kwargs={}):
     model.eval()
 
     predictions = []
+    loader.reset_iterator()
+    n = 0
 
-    data = loader.get_batch()
+    while True:
+        remaining = loader.N - n
+        batch_size = remaining if remaining < loader.batch_size else loader.batch_size
 
-    tmp = [data['fc_feats'], data['att_feats'], data['labels'], data['masks'], data['att_masks']]
-    tmp = [_.to(device) if _ is not None else _ for _ in tmp]
-    fc_feats, att_feats, labels, masks, att_masks = tmp
+        data = loader.get_batch(batch_size)
+        n = n + len(data['infos'])
 
-    # forward the model to also get generated samples for each image
-    with torch.no_grad():
-        tmp_eval_kwargs = eval_kwargs.copy()
-        tmp_eval_kwargs.update({'sample_n': 1})
-        seq, seq_logprobs = model(fc_feats, att_feats, att_masks, opt=tmp_eval_kwargs, mode='sample')
-        seq = seq.data
+        tmp = [data['fc_feats'], data['att_feats'], data['labels'], data['masks'], data['att_masks']]
+        tmp = [_.to(device) if _ is not None else _ for _ in tmp]
+        fc_feats, att_feats, labels, masks, att_masks = tmp
 
-    sents = utils.decode_sequence(model.vocab, seq)
+        # forward the model to also get generated samples for each image
+        with torch.no_grad():
+            tmp_eval_kwargs = eval_kwargs.copy()
+            tmp_eval_kwargs.update({'sample_n': 1})
+            seq, seq_logprobs = model(fc_feats, att_feats, att_masks, opt=tmp_eval_kwargs, mode='sample')
+            seq = seq.data
 
-    for k, sent in enumerate(sents):
-        entry = {'image_id': data['infos'][k]['id'], 'caption': sent}
-        if eval_kwargs.get('dump_path', 0) == 1:
-            entry['file_name'] = data['infos'][k]['file_path']
-        predictions.append(entry)
+        sents = utils.decode_sequence(model.vocab, seq)
 
-    return predictions[0]
+        for k, sent in enumerate(sents):
+            entry = {'image_id': data['infos'][k]['id'], 'caption': sent}
+            if eval_kwargs.get('dump_path', 0) == 1:
+                entry['file_name'] = data['infos'][k]['file_path']
+            predictions.append(entry)
+
+        if loader.N >= 0 and n >= loader.N:
+            break
+
+    return predictions
