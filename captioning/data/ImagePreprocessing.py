@@ -1,7 +1,7 @@
 from torchvision import transforms as trn
 import numpy as np
 import torch
-from ml import views
+import views
 
 NUM_OBJECTS = 100
 
@@ -39,12 +39,7 @@ class ImagePreprocessing:
         with torch.no_grad():
             tmp_fc, tmp_att = views.MY_RESNET(img)
 
-        return tmp_fc, tmp_att.reshape(1, -1, 2048)
-
-        # fc_batch[0] = tmp_fc.data.cpu().float().numpy()
-        # att_batch[0] = tmp_att.data.cpu().float().numpy()
-        #
-        # return fc_batch, att_batch.reshape(1, -1, 2048)
+        return tmp_fc, tmp_att.reshape(-1, 2048)
 
     def _preprocess_bottom_up(self, img):
         predictor = views.MY_BOTTOM_UP
@@ -64,7 +59,6 @@ class ImagePreprocessing:
 
             # Generate proposals with RPN
             proposals, _ = predictor.model.proposal_generator(images, features, None)
-            proposal = proposals[0]
 
             # Run RoI head for each proposal (RoI Pooling + Res5)
             proposal_boxes = [x.proposal_boxes for x in proposals]
@@ -94,9 +88,8 @@ class ImagePreprocessing:
                 if len(ids) == NUM_OBJECTS:
                     break
 
-            # instances = detector_postprocess(instances, raw_height, raw_width)
             roi_features = feature_pooled[ids].detach()
 
-            roi_features = roi_features.reshape(1, roi_features.shape[0], 2048)
+            #roi_features = roi_features.reshape(-1,  2048)
 
             return roi_features.mean(1), roi_features
