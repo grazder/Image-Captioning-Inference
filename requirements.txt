@@ -1,31 +1,17 @@
 #requirements
 numpy~=1.19.4
-Django~=3.1.7
-djangorestframework~=3.12.2
-gunicorn == 20.0.4
-#psycopg2 == 2.8.4
-#django-heroku == 0.3.1
 sklearn == 0.0
 pip~=20.0.2
-keyring~=18.0.1
-pytz~=2019.3
-setuptools~=54.2.0
-mypy~=0.800
-sqlparse~=0.4.1
-asgiref~=3.3.1
-PyYAML~=5.3.1
-Jinja2~=2.10.1
 requests~=2.22.0
-Pygments~=2.3.1
 scikit-image~=0.18.1
-h5py~=2.10.0
 lmdb~=1.1.1
 lmdbdict~=0.2.2
-torch==1.4.0
-torchvision==0.5.0
+#torch==1.4.0
+#torchvision==0.5.0
 transformers
 googletrans~=3.1.0a0
 git+https://github.com/facebookresearch/fvcore.git
 cython
 opencv-python
 git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI
+git+https://github.com/ruotianluo/meshed-memory-transformer.git

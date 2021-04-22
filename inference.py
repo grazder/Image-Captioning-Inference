@@ -24,16 +24,8 @@ def get_prediction(images: List[str]) -> List[str]:
 
     return split_predictions['caption']
 
-
-def inference(image: str) -> str:
-    """
-    Returns image caption
-    :param image_url: list of image URLs
-    :return: Description to display.
-    """
-
-    translator = Translator()
-    eng_caption = get_prediction([image])
-    ru_caption = translator.translate(eng_caption, dest='ru').text
-
-    return ru_caption
+if __name__ == '__main__':
+    preds = get_prediction([
+        'https://i.mycdn.me/i?r=AyH4iRPQ2q0otWIFepML2LxRpAyuVYvA7Xp6WnXQlBVBMg',
+        'https://i.mycdn.me/i?r=AyH4iRPQ2q0otWIFepML2LxRI3WEb0IQDxkLE8MFwgdqOQ'
+    ])
