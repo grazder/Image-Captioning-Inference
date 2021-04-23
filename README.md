@@ -61,6 +61,7 @@ for i, pred in enumerate(preds):
 
 ## Models description:
 I took scores and models from [MODEL_ZOO](https://github.com/ruotianluo/self-critical.pytorch/blob/master/MODEL_ZOO.md).
+Time estimated in **google colab**.
 
 ### Trained with Resnet101 feature:
 
@@ -73,25 +74,25 @@ Collection: [link](https://drive.google.com/open?id=0B7fNdx_jAqhtcXp0aFlWSnJmb0k
 <th valign="bottom">CIDEr</th>
 <th valign="bottom">SPICE</th>
 <th valign="bottom">Download</th>
-<th valign="bottom">Note</th>
+<th valign="bottom">Time @ 7 images.</th>
 <!-- TABLE BODY -->
  <tr><td align="left"><a href="configs/fc.yml">FC</a></td>
 <td align="center">0.953</td>
 <td align="center">0.1787</td>
 <td align="center"><a href="https://drive.google.com/open?id=1AG8Tulna7gan6OgmYul0QhxONDBGcdun">model&metrics</a></td>
-<td align="center">--caption_model newfc</td>
+<td align="center">28.4 s</td>
 </tr>
  <tr><td align="left"><a href="configs/fc_rl.yml">FC<br>+self_critical</a></td>
 <td align="center">1.045</td>
 <td align="center">0.1838</td>
 <td align="center"><a href="https://drive.google.com/open?id=1MA-9ByDNPXis2jKG0K0Z-cF_yZz7znBc">model&metrics</a></td>
-<td align="center">--caption_model newfc</td>
+<td align="center">28.6 s</td>
 </tr>
  <tr><td align="left"><a href="configs/fc_nsc.yml">FC<br>+new_self_critical</a></td>
 <td align="center">1.053</td>
 <td align="center">0.1857</td>
 <td align="center"><a href="https://drive.google.com/open?id=1OsB_jLDorJnzKz6xsOfk1n493P3hwOP0">model&metrics</a></td>
-<td align="center">--caption_model newfc</td>
+<td align="center">29.9 s</td>
 </tr>
 </tbody></table>
 
@@ -106,49 +107,49 @@ Collection: [link](https://drive.google.com/open?id=1-RNak8qLUR5LqfItY6OenbRl8sd
 <th valign="bottom">CIDEr</th>
 <th valign="bottom">SPICE</th>
 <th valign="bottom">Download</th>
-<th valign="bottom">Note</th>
+<th valign="bottom">Time @ 7 images.</th>
 <!-- TABLE BODY -->
  <tr><td align="left"><a href="configs/a2i2.yml">Att2in</a></td>
 <td align="center">1.089</td>
 <td align="center">0.1982</td>
 <td align="center"><a href="https://drive.google.com/open?id=1jO9bSocC93n1vBZmZVaASWc_jJ1VKZUq">model&metrics</a></td>
-<td align="center">My replication</td>
+<td align="center">2min 17s</td>
 </tr>
  <tr><td align="left"><a href="configs/a2i2_sc.yml">Att2in<br>+self_critical</a></td>
 <td align="center">1.173</td>
 <td align="center">0.2046</td>
 <td align="center"><a href="https://drive.google.com/open?id=1aI7hYUmgRLksI1wvN9-895GMHz4yStHz">model&metrics</a></td>
-<td align="center"></td>
+<td align="center">2min 18s</td>
 </tr>
  <tr><td align="left"><a href="configs/a2i2_nsc.yml">Att2in<br>+new_self_critical</a></td>
 <td align="center">1.195</td>
 <td align="center">0.2066</td>
 <td align="center"><a href="https://drive.google.com/open?id=1BkxLPL4SuQ_qFa-4fN96u23iTFWw-iXX">model&metrics</a></td>
-<td align="center"></td>
+<td align="center">2min 19s</td>
 </tr>
  <tr><td align="left"><a href="configs/updown/updown.yml">UpDown</a></td>
 <td align="center">1.099</td>
 <td align="center">0.1999</td>
 <td align="center"><a href="https://drive.google.com/open?id=14w8YXrjxSAi5D4Adx8jgfg4geQ8XS8wH">model&metrics</a></td>
-<td align="center">My replication</td>
+<td align="center">2min 20s</td>
 </tr>
  <tr><td align="left"><a href="configs/updown/updown_sc.yml">UpDown<br>+self_critical</a></td>
 <td align="center">1.227</td>
 <td align="center">0.2145</td>
 <td align="center"><a href="https://drive.google.com/open?id=1QdCigVWdDKTbUe3_HQFEGkAsv9XIkKkE">model&metrics</a></td>
-<td align="center"></td>
+<td align="center">2min 19s</td>
 </tr>
  <tr><td align="left"><a href="configs/updown/updown_nsc.yml">UpDown<br>+new_self_critical</a></td>
 <td align="center">1.239</td>
 <td align="center">0.2154</td>
 <td align="center"><a href="https://drive.google.com/open?id=1cgoywxAdzHtIF2C6zNnIA7G2wjol_ybf">model&metrics</a></td>
-<td align="center"></td>
+<td align="center">2min 19s</td>
 </tr>
  <tr><td align="left"><a href="configs/updown/ud_long_nsc.yml">UpDown<br>+Schedule long<br>+new_self_critical</a></td>
 <td align="center">1.280</td>
 <td align="center">0.2200</td>
 <td align="center"><a href="https://drive.google.com/open?id=1bCDmf4JCM79f5Lqp6MAn1ap4b3NJ5Gis">model&metrics</a></td>
-<td align="center">Best of 5 models<br>schedule proposed by yangxuntu</td>
+<td align="center">2min 20s</td>
 </tr>
  <tr><td align="left"><a href="configs/transformer/transformer.yml">Transformer</a></td>
 <td align="center">1.1259</td>
