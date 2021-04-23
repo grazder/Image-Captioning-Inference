@@ -54,9 +54,9 @@ class Captions:
 
         self.opt, self.infos, self.model = self._get_model()
 
-        if self._type == 'resnet':
+        if self._model_type == 'resnet':
             preprocessor_model = self._get_resnet()
-        elif self._type == 'bottom-up':
+        elif self._model_type == 'bottom-up':
             preprocessor_model = self._get_bottom_up()
 
         self.preprocessor = ImagePreprocessing(preprocessor_model, self._model_type)
