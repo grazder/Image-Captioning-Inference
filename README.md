@@ -31,7 +31,7 @@ bash download.sh
 
 There are a lot of models from [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch). Which you can find in [MODEL_ZOO](https://github.com/ruotianluo/self-critical.pytorch/blob/master/MODEL_ZOO.md).
 
-## Object initialization and usage
+## Object initialization and usage example
 ```
 from Captions import Captions
 import os
