@@ -26,3 +26,34 @@ cd Image-Captioning-Inference
 pip install -r requirements.txt
 bash download.sh
 ```
+
+## Models
+
+There are a lot of models from [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch). Which you can find in [MODEL_ZOO](https://github.com/ruotianluo/self-critical.pytorch/blob/master/MODEL_ZOO.md).
+
+## Object initialization and usage
+```
+from Captions import Captions
+import os
+
+model_fc_resnet = Captions(
+                  model_path='data/fc-resnet-weights/model.pth',
+                  infos_path='data/fc-resnet-weights/infos.pkl',
+                  model_type='resnet',
+                  resnet_model_path='data/imagenet_weights/resnet101.pth',
+                  bottom_up_model_path='data/bottom-up/faster_rcnn_from_caffe.pkl',
+                  bottom_up_config_path='data/bottom-up/faster_rcnn_R_101_C4_caffe.yaml',
+                  bottom_up_vocab='data/vocab/objects_vocab.txt',
+                  device='cpu'
+                  )
+
+images = os.listdir('example_images/')
+paths = [os.path.join('example_images', x) for x in images]
+
+preds = model_fc_resnet.get_prediction(paths)
+
+for i, pred in enumerate(preds):
+    print(f'{images[i]}: {pred}')
+```
+
+
