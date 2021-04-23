@@ -3,27 +3,26 @@ from __future__ import division
 from __future__ import print_function
 
 from captioning import models
-import argparse
 from captioning.utils import misc as utils
 from captioning.utils.resnet_utils import myResnet
 from captioning.utils import resnet
+from captioning.data.dataloaderraw import *
+from captioning.utils import eval_utils
+from captioning.data.ImagePreprocessing import ImagePreprocessing
 
 from detectron2.engine import DefaultPredictor
 from detectron2.config import get_cfg
 from detectron2.data import MetadataCatalog
 
-from captioning.data.dataloaderraw import *
-from captioning.utils import eval_utils
-
-from captioning.data.ImagePreprocessing import ImagePreprocessing
-
-import os
+import argparse
 from typing import List
 
 
 class Captions:
     def __init__(self,
-                 model_path: str = 'data/fc-resnet-weights/', type: str = 'resnet',
+                 model_path: str = 'data/fc-resnet-weights/model.pth',
+                 infos_path: str = 'data/fc-resnet-weights/infos.pkl',
+                 model_type: str = 'resnet',
                  resnet_model_path: str = 'data/imagenet_weights/resnet101.pth',
                  bottom_up_model_path: str = 'data/bottom-up/faster_rcnn_from_caffe.pkl',
                  bottom_up_config_path: str = 'data/bottom-up/faster_rcnn_R_101_C4_caffe.yaml',
@@ -32,6 +31,7 @@ class Captions:
         """
         Returns image caption
         :param model_path: path to model
+        :param infos_path: path to model infos
         :param type: type of picture embedding - resnet or bottom-up
         :param resnet_model_path: path to resnet model
         :param bottom_up_model_path: path to bottom-up model
@@ -41,6 +41,7 @@ class Captions:
         """
 
         self._model_path = model_path
+        self._infos_path = infos_path
 
         assert type == 'resnet' or type == 'bottom-up'
         self._type = type
@@ -83,8 +84,8 @@ class Captions:
                                  max_length=20, num_images=-1, remove_bad_endings=0, sample_method='greedy',
                                  split='test', suppress_UNK=1, temperature=1.0, verbose_beam=1, verbose_loss=0)
 
-        opt.model = os.path.join(self._model_path, 'model.pth')
-        opt.infos_path = os.path.join(self._model_path, 'infos.pkl')
+        opt.model = self._model_path
+        opt.infos_path = self._infos_path
         opt.device = self._device
         opt.dataset = opt.input_json
 
