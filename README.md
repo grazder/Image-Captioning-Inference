@@ -19,8 +19,8 @@ Or you can install and download models using `download.sh` script.
 
 Repo installation code, which I use:
 ```
-!git clone https://github.com/grazder/Image-Captioning-Inference.git
-%cd Image-Captioning-Inference
-!pip install -r requirements.txt
-!bash download.sh
+git clone https://github.com/grazder/Image-Captioning-Inference.git
+cd Image-Captioning-Inference
+pip install -r requirements.txt
+bash download.sh
 ```
