@@ -7,8 +7,8 @@ from Captions import Captions
 
 if __name__ == '__main__':
     model = Captions(
-                  model_path='data/fc-resnet-weights/model.pth',
-                  infos_path='data/fc-resnet-weights/infos.pkl',
+                  model_path='data/fc-new-self-critical-weights/model.pth',
+                  infos_path='data/fc-new-self-critical-weights/infos.pkl',
                   model_type='resnet',
                   resnet_model_path='data/imagenet_weights/resnet101.pth',
                   bottom_up_model_path='data/bottom-up/faster_rcnn_from_caffe.pkl',
