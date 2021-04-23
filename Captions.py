@@ -43,8 +43,8 @@ class Captions:
         self._model_path = model_path
         self._infos_path = infos_path
 
-        assert type == 'resnet' or type == 'bottom-up'
-        self._type = type
+        assert model_type == 'resnet' or model_type == 'bottom-up'
+        self._model_type = model_type
 
         self._resnet_model_path = resnet_model_path
         self._bottom_up_model_path = bottom_up_model_path
@@ -59,7 +59,7 @@ class Captions:
         elif self._type == 'bottom-up':
             preprocessor_model = self._get_bottom_up()
 
-        self.preprocessor = ImagePreprocessing(preprocessor_model, self._type)
+        self.preprocessor = ImagePreprocessing(preprocessor_model, self._model_type)
 
     def get_prediction(self, images: List[str]) -> List[str]:
         """
