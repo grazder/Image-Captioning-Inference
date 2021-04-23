@@ -2,11 +2,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from Model import Model
+from Captions import Captions
 
 
 if __name__ == '__main__':
-    model = Model(
+    model = Captions(
                   # model_path='data/fc-resnet-weights/',
                   # type='resnet',
                   model_path='data/transformer-self-critical-weights/',

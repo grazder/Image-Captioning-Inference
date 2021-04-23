@@ -20,11 +20,8 @@ from captioning.data.ImagePreprocessing import ImagePreprocessing
 import os
 from typing import List
 
-# model_path = 'data/transformer-self-critical-weights/'
-# model_path = 'data/fc-resnet-weights/'
 
-
-class Model:
+class Captions:
     def __init__(self,
                  model_path: str = 'data/fc-resnet-weights/', type: str = 'resnet',
                  resnet_model_path: str = 'data/imagenet_weights/resnet101.pth',
