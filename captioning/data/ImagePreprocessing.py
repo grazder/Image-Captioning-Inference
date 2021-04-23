@@ -7,13 +7,14 @@ NUM_OBJECTS = 100
 
 
 class ImagePreprocessing:
-    def __init__(self, model) -> None:
+    def __init__(self, model, embed_type: str) -> None:
         self._model = model
+        self._embed_type = embed_type
 
     def preprocess(self, img):
-        if self._model.type == 'resnet':
+        if self._embed_type == 'resnet':
             return self._preprocess_resnet(img)
-        elif self._model.type == 'bottom-up':
+        elif self._embed_type == 'bottom-up':
             return self._preprocess_bottom_up(img)
 
     def _preprocess_resnet(self, img):
