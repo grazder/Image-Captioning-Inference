@@ -66,7 +66,7 @@ class DataLoaderRaw:
             'infos': infos}
 
         max_att_len = max([_.shape[0] for _ in att_batch])
-        data['att_feats'] = np.zeros([len(att_batch), max_att_len, att_batch[0].shape[1]], dtype = 'float32')
+        data['att_feats'] = np.zeros([len(att_batch), max_att_len, att_batch[0].shape[1]], dtype='float32')
 
         for i in range(len(att_batch)):
             data['att_feats'][i, :att_batch[i].shape[0], ] = att_batch[i]

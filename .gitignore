@@ -3,3 +3,4 @@
 *.pth
 /detectron2.egg-info/
 /detectron2/model_zoo/configs
+/build/

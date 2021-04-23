@@ -45,7 +45,7 @@ class Model:
         self._model_path = model_path
 
         assert type == 'resnet' or type == 'bottom-up'
-        self._type = type
+        self.type = type
 
         self._resnet_model_path = resnet_model_path
         self._bottom_up_model_path = bottom_up_model_path
@@ -60,7 +60,7 @@ class Model:
         elif type == 'bottom-up':
             preprocessor_model = self._get_bottom_up()
 
-        self.preprocessor = ImagePreprocessing(preprocessor_model, self._type)
+        self.preprocessor = ImagePreprocessing(preprocessor_model)
 
     def get_prediction(self, images: List[str]) -> List[str]:
         """
