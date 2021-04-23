@@ -36,7 +36,7 @@ class ImagePreprocessing:
         return tmp_fc, tmp_att.reshape(-1, 2048)
 
     def _preprocess_bottom_up(self, img):
-        predictor = self._model.copy()
+        predictor = self._model
 
         with torch.no_grad():
             raw_height, raw_width = img.shape[:2]

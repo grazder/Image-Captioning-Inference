@@ -17,6 +17,7 @@ from captioning.utils import eval_utils
 
 from captioning.data.ImagePreprocessing import ImagePreprocessing
 
+import os
 from typing import List
 
 # model_path = 'data/transformer-self-critical-weights/'
@@ -85,8 +86,8 @@ class Model:
                                  max_length=20, num_images=-1, remove_bad_endings=0, sample_method='greedy',
                                  split='test', suppress_UNK=1, temperature=1.0, verbose_beam=1, verbose_loss=0)
 
-        opt.model = self._model_path + 'model.pth'
-        opt.infos_path = self._model_path + 'infos.pkl'
+        opt.model = os.path.join(self._model_path, 'model.pth')
+        opt.infos_path = os.path.join(self._model_path, 'infos.pkl')
         opt.device = self._device
         opt.dataset = opt.input_json
 
