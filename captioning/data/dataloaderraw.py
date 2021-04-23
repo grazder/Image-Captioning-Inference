@@ -54,8 +54,6 @@ class DataLoaderRaw:
             }
             infos.append(info_struct)
 
-        print([x.shape for x in att_batch])
-        print([x.shape for x in fc_batch])
         data = {
             'fc_feats': np.stack(fc_batch),
             'labels': np.zeros([batch_size, 0]),
