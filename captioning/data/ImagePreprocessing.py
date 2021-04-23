@@ -1,26 +1,20 @@
 from torchvision import transforms as trn
+from detectron2.modeling.roi_heads.fast_rcnn import FastRCNNOutputs, fast_rcnn_inference_single_image
 import numpy as np
 import torch
-import views
 
 NUM_OBJECTS = 100
 
-from detectron2.modeling.roi_heads.fast_rcnn import FastRCNNOutputLayers, FastRCNNOutputs, \
-    fast_rcnn_inference_single_image
-
 
 class ImagePreprocessing:
+    def __init__(self, model, embed_type) -> None:
+        self._model = model
+        self._embed_type = embed_type
 
-    def __init__(self, embed_type: str) -> None:
-        if embed_type == 'resnet' or embed_type == 'bottom-up':
-            self.embed_type = embed_type
-        else:
-            raise ValueError('Wrong Preprocessing Type')
-
-    def preprocess(self, img: str):
-        if self.embed_type == 'resnet':
+    def preprocess(self, img):
+        if self._embed_type == 'resnet':
             return self._preprocess_resnet(img)
-        elif self.embed_type == 'bottom-up':
+        elif self._embed_type == 'bottom-up':
             return self._preprocess_bottom_up(img)
 
     def _preprocess_resnet(self, img):
@@ -37,12 +31,12 @@ class ImagePreprocessing:
         img = torch.from_numpy(img.transpose([2, 0, 1]))
         img = preprocess(img)
         with torch.no_grad():
-            tmp_fc, tmp_att = views.MY_RESNET(img)
+            tmp_fc, tmp_att = self._model(img)
 
         return tmp_fc, tmp_att.reshape(-1, 2048)
 
     def _preprocess_bottom_up(self, img):
-        predictor = views.MY_BOTTOM_UP
+        predictor = self._model.copy()
 
         with torch.no_grad():
             raw_height, raw_width = img.shape[:2]
@@ -89,7 +83,5 @@ class ImagePreprocessing:
                     break
 
             roi_features = feature_pooled[ids].detach()
-
-            #roi_features = roi_features.reshape(-1,  2048)
 
             return roi_features.mean(1), roi_features

@@ -7,32 +7,26 @@ import torch
 import skimage
 import skimage.io
 
-from ..data.ImagePreprocessing import ImagePreprocessing
-from typing import List
+from typing import List, Dict
+
 
 class DataLoaderRaw:
-
-    def __init__(self, images: List[str], embed_type: str = 'bottom-up', batch_size: int = 10):
-        assert embed_type == 'resnet' or embed_type == 'bottom-up'
-
+    def __init__(self, preprocessor, images: List[str], batch_size: int = 10) -> None:
         self.files = images
         self.N = len(self.files)
         self.ids = [str(x) for x in range(self.N)]
         self.iterator = 0
-        self.embed_type = embed_type
 
         self.dataset = self  # to fix the bug in eval
-        self.preprocesser = ImagePreprocessing(self.embed_type)
+        self.preprocessor = preprocessor
         self.batch_size = batch_size
 
-    def get_batch(self, batch_size = None):
+    def get_batch(self, batch_size: int = None) -> Dict:
+        """
+        Get batch of preprocessed images
+        :param batch_size: size of batch
+        """
         batch_size = batch_size or self.batch_size
-        # if self.embed_type == 'resnet':
-        #     fc_batch = np.ndarray((batch_size, 2048), dtype='float32')
-        #     att_batch = np.ndarray((batch_size, 196, 2048), dtype='float32')
-        # elif self.embed_type == 'bottom-up':
-        #     fc_batch = np.ndarray((batch_size, 2048), dtype='float32')
-        #     att_batch = np.ndarray((batch_size, 100, 2048), dtype='float32')
 
         fc_batch = []
         att_batch = []
@@ -49,7 +43,7 @@ class DataLoaderRaw:
             self.iterator = ri_next
 
             img = skimage.io.imread(self.files[ri])
-            tmp_fc, tmp_att = self.preprocesser.preprocess(img)
+            tmp_fc, tmp_att = self.preprocessor.preprocess(img)
 
             fc_batch.append(tmp_fc)
             att_batch.append(tmp_att)
@@ -89,5 +83,8 @@ class DataLoaderRaw:
 
         return data
 
-    def reset_iterator(self):
+    def reset_iterator(self) -> None:
+        """
+        Start new iteration. Iterator = 0
+        """
         self.iterator = 0
