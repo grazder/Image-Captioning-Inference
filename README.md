@@ -155,7 +155,7 @@ Collection: [link](https://drive.google.com/open?id=1-RNak8qLUR5LqfItY6OenbRl8sd
 <td align="center">1.1259</td>
 <td align="center">0.2063</td>
 <td align="center"><a href="https://drive.google.com/open?id=10Q5GJ2jZFCexD71rY9gg886Aasuaup8O">model&metrics</a></td>
-<td align="center"></td>
+<td align="center">2min 21s</td>
 </tr>
 <tr><td align="left"><a href="configs/transformer/transformer_step.yml">Transformer(warmup+step decay)</a></td>
 <td align="center">1.1496</td>
