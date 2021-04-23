@@ -27,6 +27,9 @@ pip install -r requirements.txt
 bash download.sh
 ```
 
+You don't need to download all models only models which you will use.
+For example: bottom-up attention + transformer. Everything else you can comment.
+
 ## Models
 
 There are a lot of models from [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch). Which you can find in [MODEL_ZOO](https://github.com/ruotianluo/self-critical.pytorch/blob/master/MODEL_ZOO.md).
