@@ -179,6 +179,8 @@ Collection: [link](https://drive.google.com/open?id=1-RNak8qLUR5LqfItY6OenbRl8sd
 
 ## Captions Examples
 
+![](/readme_pics/pic_Examples.png)
+
 <table><tbody>
 <!-- START TABLE -->
 <!-- TABLE HEADER -->
