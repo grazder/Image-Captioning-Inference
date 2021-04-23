@@ -188,98 +188,98 @@ Collection: [link](https://drive.google.com/open?id=1-RNak8qLUR5LqfItY6OenbRl8sd
 <th valign="bottom">statue.jpeg</th>
 <th valign="bottom">tv_man.jpeg</th>
 <!-- TABLE BODY -->
-<tr><td align="left">FC</td>
+<tr><td align="left">**FC**</td>
 <td align="center">a group of people walking down a street</td>
 <td align="center">a man in a suit and tie holding a cell phone</td>
 <td align="center">a man in a hat and a hat holding a frisbee</td>
 <td align="center">a man is brushing his teeth with a tooth brush</td>
 </tr>
 
-<tr><td align="left">FC + self-critical</td>
+<tr><td align="left">**FC + self-critical**</td>
 <td align="center">a group of people riding a bike down a street</td>
 <td align="center">a man wearing a suit and a tie</td>
 <td align="center">a man standing next to a man with a baseball bat</td>
 <td align="center">a man taking a picture in a bathroom with a mirror</td>
 </tr>
 
-<tr><td align="left">FC + new-self-critical</td>
+<tr><td align="left">**FC + new-self-critical**</td>
 <td align="center">a group of people riding bikes down a city street</td>
 <td align="center">a man wearing a suit and tie talking on a cell phone</td>
 <td align="center">a man is holding a frisbee in a street</td>
 <td align="center">a man brushing his teeth in a bathroom with a mirror</td>
 </tr>
 
-<tr><td align="left">Att2in</td>
+<tr><td align="left">**Att2in**</td>
 <td align="center">a group of people riding bikes down a city street</td>
 <td align="center"> a man in a suit and tie is wearing a suit</td>
 <td align="center">a man and a woman are standing in a park</td>
 <td align="center">a man in a blue shirt playing a video game</td>
 </tr>
 
-<tr><td align="left">Att2in + self-critical</td>
+<tr><td align="left">**Att2in + self-critical**</td>
 <td align="center">a group of people riding a bike down a city street</td>
 <td align="center">a man wearing a suit and tie and a table</td>
 <td align="center">a man and a woman sitting on a bench with a book</td>
 <td align="center">a man playing a video game in a wii</td>
 </tr>
 
-<tr><td align="left">Att2in + new self-critical</td>
+<tr><td align="left">**Att2in + new self-critical**</td>
 <td align="center">a group of people riding bikes down a city street</td>
 <td align="center">a man in a suit and tie standing in front of a table</td>
 <td align="center">a man and a woman sitting on a bench with a book</td>
 <td align="center">a man is playing a video game with a wii</td>
 </tr>
 
-<tr><td align="left">Updown</td>
+<tr><td align="left">**Updown**</td>
 <td align="center">a group of people riding bikes down a street</td>
 <td align="center">a man in a suit and tie is holding a microphone</td>
 <td align="center">a man and a woman are standing in front of a tree</td>
 <td align="center">a man is playing a video game on a television</td>
 </tr>
 
-<tr><td align="left">Updown + self-critical</td>
+<tr><td align="left">**Updown + self-critical**</td>
 <td align="center">a group of people riding bikes down a city street</td>
 <td align="center">a man in a suit and tie sitting on a table</td>
 <td align="center">a man and a woman sitting on a bench with a book</td>
 <td align="center">a man is holding a video game on a television</td>
 </tr>
 
-<tr><td align="left">Updown + new self-critical</td>
+<tr><td align="left">**Updown + new self-critical**</td>
 <td align="center">a group of people riding bikes down a city street</td>
 <td align="center">a man in a suit and tie in a UNK</td>
 <td align="center">a man and a woman holding a book</td>
 <td align="center">a man is playing a video game on a tv</td>
 </tr>
 
-<tr><td align="left">UpDown+Schedule long+new_self_critical</td>
+<tr><td align="left">**UpDown+Schedule long+new_self_critical**</td>
 <td align="center">a group of people riding on a city street</td>
 <td align="center">a man in a suit and tie sitting in a table</td>
 <td align="center">a man and a woman standing in front of a tree</td>
 <td align="center">a man playing a video game with a wii</td>
 </tr>
 
-<tr><td align="left">Transformer</td>
+<tr><td align="left">**Transformer**</td>
 <td align="center">a group of people are riding bikes on the sidewalk</td>
 <td align="center">a man in a suit and tie sitting in a chair</td>
 <td align="center">a man and woman standing in front of a statue</td>
 <td align="center">a man in a room playing a video game</td>
 </tr>
 
-<tr><td align="left">Transformer(warmup+step decay)</td>
+<tr><td align="left">**Transformer(warmup+step decay)**</td>
 <td align="center">a group of people riding bikes down a city street</td>
 <td align="center">a man in a suit sitting in a chair</td>
 <td align="center">a man and woman standing next to each other</td>
 <td align="center">a man is playing a video game on a large screen</td>
 </tr>
 
-<tr><td align="left">Transformer + self-critical</td>
+<tr><td align="left">**Transformer + self-critical**</td>
 <td align="center">a group of people riding bikes down a city street</td>
 <td align="center">a man in a suit and tie sitting in a room</td>
 <td align="center">a man and a woman standing in front of a tree</td>
 <td align="center">a man playing a video game in a room</td>
 </tr>
 
-<tr><td align="left">Transformer + new self-critical</td>
+<tr><td align="left">**Transformer + new self-critical**</td>
 <td align="center">a group of people riding bikes down a city street</td>
 <td align="center">a man in a suit and tie sitting in a room</td>
 <td align="center">a man and a woman standing next to a tree</td>
