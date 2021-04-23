@@ -84,4 +84,4 @@ class ImagePreprocessing:
 
             roi_features = feature_pooled[ids].detach()
 
-            return roi_features.mean(1), roi_features
+            return roi_features.mean(0), roi_features

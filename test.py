@@ -6,8 +6,11 @@ from Model import Model
 
 
 if __name__ == '__main__':
-    model = Model(model_path='data/fc-resnet-weights/',
-                  type='resnet',
+    model = Model(
+                  # model_path='data/fc-resnet-weights/',
+                  # type='resnet',
+                  model_path='data/transformer-self-critical-weights/',
+                  type='bottom-up',
                   resnet_model_path='data/imagenet_weights/resnet101.pth',
                   bottom_up_model_path='data/bottom-up/faster_rcnn_from_caffe.pkl',
                   bottom_up_config_path='data/bottom-up/faster_rcnn_R_101_C4_caffe.yaml',
