@@ -3,6 +3,8 @@
 This project use models and weights from [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch).
 Bottom-up attention embeddings generated using [py-bottom-up-attention](https://github.com/airsplay/py-bottom-up-attention), which is pytorch implementation of [bottom-up-attention](https://github.com/peteanderson80/bottom-up-attention).
 
+![](/readme_pics/example.png)
+
 ## Requirements
 - requirements.txt
 
