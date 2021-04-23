@@ -131,16 +131,27 @@ gdown --id 1lD2Em5A5gv7TzoHjS1S1axE53C1yGOV6 -O infos.pkl
 mkdir data/transformer-weights/
 mv infos.pkl data/transformer-weights/
 
+# Transformer(warmup+step decay) Weights
+# https://drive.google.com/drive/folders/1Qog9yvpGWdHanFXFITjyrWXMzre3ek3e
+
+gdown --id 1p63TGjzjuwxRYO_pZbgijxseaZcJ3wey -O model.pth
+mkdir data/transformer-step-weights/
+mv model.pth data/transformer-step-weights/
+
+gdown --id 1DxlkKpBwz2yk95niSv4eyx4X9gcUOYxu -O infos.pkl
+mkdir data/transformer-step-weights/
+mv infos.pkl data/transformer-step-weights/
+
 # Transformer + self_critical Weights
 # https://drive.google.com/drive/folders/12iKJJSIGrzFth_dJXqcXy-_IjAU0I3DC
 
 gdown --id 1bztJgN9H4EHuZ6dGtD2D23qPoC0IoZWP -O model.pth
-mkdir data/transformer-step-weights/
-mv model.pth data/transformer-step-weights/
+mkdir data/transformer-self-critical-weights/
+mv model.pth data/transformer-self-critical-weights/
 
 gdown --id 139y1kaPjCj7EjySBof6w64_M-54af0LS -O infos.pkl
-mkdir data/transformer-step-weights/
-mv infos.pkl data/transformer-step-weights/
+mkdir data/transformer-self-critical-weights/
+mv infos.pkl data/transformer-self-critical-weights/
 
 # Transformer + new_self_critical Weights
 # https://drive.google.com/drive/folders/1sJDqetTVOnei6Prgvl_4vkvrYlKlc-ka?usp=drive_open
