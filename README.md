@@ -59,7 +59,7 @@ for i, pred in enumerate(preds):
     print(f'{images[i]}: {pred}')
 ```
 
-## Models description:
+## Models Timings:
 I took scores and models from [MODEL_ZOO](https://github.com/ruotianluo/self-critical.pytorch/blob/master/MODEL_ZOO.md).
 Time estimated in **google colab**.
 
