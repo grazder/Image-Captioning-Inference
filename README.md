@@ -74,7 +74,7 @@ Collection: [link](https://drive.google.com/open?id=0B7fNdx_jAqhtcXp0aFlWSnJmb0k
 <th valign="bottom">CIDEr</th>
 <th valign="bottom">SPICE</th>
 <th valign="bottom">Download</th>
-<th valign="bottom">Time @ 7 images.</th>
+<th valign="bottom">Time @ 1 image.</th>
 <!-- TABLE BODY -->
  <tr><td align="left">FC</td>
 <td align="center">0.953</td>
