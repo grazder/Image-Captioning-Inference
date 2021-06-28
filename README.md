@@ -80,19 +80,19 @@ Collection: [link](https://drive.google.com/open?id=0B7fNdx_jAqhtcXp0aFlWSnJmb0k
 <td align="center">0.953</td>
 <td align="center">0.1787</td>
 <td align="center"><a href="https://drive.google.com/open?id=1AG8Tulna7gan6OgmYul0QhxONDBGcdun">model&metrics</a></td>
-<td align="center">28.4 s</td>
+<td align="center">4.1 s</td>
 </tr>
  <tr><td align="left">FC<br>+self_critical</td>
 <td align="center">1.045</td>
 <td align="center">0.1838</td>
 <td align="center"><a href="https://drive.google.com/open?id=1MA-9ByDNPXis2jKG0K0Z-cF_yZz7znBc">model&metrics</a></td>
-<td align="center">28.6 s</td>
+<td align="center">4.2 s</td>
 </tr>
  <tr><td align="left">FC<br>+new_self_critical</td>
 <td align="center">1.053</td>
 <td align="center">0.1857</td>
 <td align="center"><a href="https://drive.google.com/open?id=1OsB_jLDorJnzKz6xsOfk1n493P3hwOP0">model&metrics</a></td>
-<td align="center">29.9 s</td>
+<td align="center">4.7 s</td>
 </tr>
 </tbody></table>
 
